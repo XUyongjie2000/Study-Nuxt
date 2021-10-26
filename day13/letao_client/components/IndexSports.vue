@@ -2,46 +2,13 @@
   <div class="cz_live">
     <img src="images/title1.png" alt="" />
     <div class="mui-clearfix">
-      <a href="#" class="cz_product">
+      <a href="#" class="cz_product" v-for="item in sports" :key="item.id">
         <div class="box">
           <img src="/images/product.jpg" alt="" />
-          <p class="name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</p>
+          <p class="name">{{ item.name }}</p>
           <p>
-            <span class="price">¥560.00</span
-            ><span class="oldPrice">¥888.00</span>
-          </p>
-          <button class="button">立即购买</button>
-        </div>
-      </a>
-      <a href="#" class="cz_product">
-        <div class="box">
-          <img src="/images/product.jpg" alt="" />
-          <p class="name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</p>
-          <p>
-            <span class="price">¥560.00</span
-            ><span class="oldPrice">¥888.00</span>
-          </p>
-          <button class="button">立即购买</button>
-        </div>
-      </a>
-      <a href="#" class="cz_product">
-        <div class="box">
-          <img src="images/product.jpg" alt="" />
-          <p class="name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</p>
-          <p>
-            <span class="price">¥560.00</span
-            ><span class="oldPrice">¥888.00</span>
-          </p>
-          <button class="button">立即购买</button>
-        </div>
-      </a>
-      <a href="#" class="cz_product">
-        <div class="box">
-          <img src="images/product.jpg" alt="" />
-          <p class="name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</p>
-          <p>
-            <span class="price">¥560.00</span
-            ><span class="oldPrice">¥888.00</span>
+            <span class="price">¥{{ item.price }}</span
+            ><span class="oldPrice">¥{{ item.oldPrice }}</span>
           </p>
           <button class="button">立即购买</button>
         </div>
@@ -49,6 +16,11 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: ["sports"]
+};
+</script>
 <style scoped>
 .cz_live {
   padding: 0 10px;
